@@ -1,0 +1,8 @@
+#!/bin/bash
+# Fallback used only while TeX Live is not installed: runs tectonic (XeTeX engine) with xelatex-style args.
+# Use: PATH="$HOME/job-radar/cv/tpl/bin:$PATH" python3 build_cv.py ...
+args=()
+for a in "$@"; do
+  case "$a" in -interaction=*|-halt-on-error|-file-line-error) ;; *) args+=("$a") ;; esac
+done
+exec tectonic --keep-logs "${args[@]}"

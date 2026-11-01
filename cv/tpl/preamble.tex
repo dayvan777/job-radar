@@ -1,0 +1,28 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[a4paper,margin=0.45in,top=0.3in,bottom=0.25in]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Latin Modern Roman}{\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]}{\setmainfont{lmroman10}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,SmallCapsFont=lmromancaps10-regular]}% fallback by file name (tectonic)
+\usepackage{titlesec,enumitem,tabularx,xcolor,graphicx}
+\usepackage[hidelinks,pdfauthor={Firstname Lastname}]{hyperref}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\raggedbottom\raggedright
+\titleformat{\section}{\vspace{-6pt}\scshape\raggedright\large}{}{0em}{}[\titlerule\vspace{-5pt}]
+\newcommand{\entry}[4]{\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\ \textit{\small#3} & \textit{\small #4}\\\end{tabular*}\vspace{-7pt}}
+\newcommand{\proj}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2\\\end{tabular*}\vspace{-7pt}}
+\newcommand{\bul}[1]{\item\small{#1\vspace{-2pt}}}
+\newcommand{\entriesStart}{\begin{itemize}[leftmargin=0.15in,label={}]}
+\newcommand{\entriesEnd}{\end{itemize}}
+\newcommand{\bulStart}{\begin{itemize}[leftmargin=0.3in,label=\textbullet,itemsep=-1.5pt]}
+\newcommand{\bulEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\header}[4]{%
+\begin{minipage}[t]{0.09\textwidth}\mbox{}\end{minipage}\hfill
+\begin{minipage}[t]{0.79\textwidth}\centering
+{\Huge\scshape Firstname Lastname}\\[2pt]
+\large #1\\[1pt]
+\if\relax\detokenize{#2}\relax\else{\small\textbf{#2}}\\[1pt]\fi
+\small #3\\
+\small \href{https://linkedin.com/in/your-profile}{\underline{linkedin.com/in/your-profile}} $|$ \href{https://github.com/your-github}{\underline{github.com/your-github}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.10\textwidth}\raggedleft\vspace{0pt}\IfFileExists{#4}{\fbox{\includegraphics[width=\linewidth]{#4}}}{}\end{minipage}
+\vspace{2pt}}

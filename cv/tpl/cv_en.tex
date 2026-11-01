@@ -1,0 +1,43 @@
+\input{preamble.tex}
+\begin{document}
+% Replace every line below with your own facts (the same facts as CLAUDE.md section 9). Keep it to one page.
+% %%TARGET%% and %%SUMMARY%% are filled by build_cv.py for each job. Put photo.jpg next to this file or leave it out.
+\header{Your Role Title}{%%TARGET%%}{City, Country $|$ +00 000 000 00 00 $|$ \href{mailto:you@example.com}{\underline{you@example.com}}}{photo.jpg}
+\section{Summary}
+\small %%SUMMARY%%
+\section{Experience}
+\entriesStart
+\entry{Role Title}{2025 -- Present}{Company or ``Freelance''}{City or remote}
+\bulStart
+\bul{What you built, for whom, with a \textbf{real number} (users, hours saved, money)}
+\bul{Second result, tools named: for example \textbf{n8n with an LLM step}, webhooks, REST APIs}
+\bulEnd
+\entry{Earlier Role}{MM/YYYY -- MM/YYYY}{Company}{City, Country}
+\bulStart
+\bul{One line on what you were responsible for}
+\bulEnd
+\entriesEnd
+\section{Projects}
+\entriesStart
+\proj{\textbf{Project Name} $|$ \emph{Python, Docker, GitHub Actions}}{\href{https://github.com/your-github/project}{\underline{github.com/your-github/project}}}
+\bulStart
+\bul{What it does and why it matters; tests, CI, users or stars if you have them}
+\bulEnd
+\entriesEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in,label={}]\small\item{
+\textbf{AI and LLM}: only what you have really used\\
+\textbf{Automation}: ...\\
+\textbf{Languages}: ...\\
+\textbf{Frameworks and tools}: ...}
+\end{itemize}
+\section{Education}
+\entriesStart
+\entry{School, University or Course}{YYYY}{Degree, certificate or grade}{City or online}
+\entriesEnd
+\section{Additional}
+\begin{itemize}[leftmargin=0.15in,label={}]\small\item{
+\textbf{Languages}: Language (level), ...\\
+\textbf{Availability}: remote or on site; work permit; start date}
+\end{itemize}
+\end{document}
